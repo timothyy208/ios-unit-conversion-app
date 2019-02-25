@@ -21,6 +21,8 @@ class ViewController: UIViewController {
                         "meters to feet",
                         "meters to feet",
                         "meters to yards"]
+    var fromUnits = ""
+    var toUnits = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +50,11 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        fromUnitsLabel.text = formulaArray[row]
+        let unitsArray = formulaArray[row].components(separatedBy: " to ")
+        fromUnits = unitsArray[0]
+        toUnits = unitsArray[1]
+        fromUnitsLabel.text = fromUnits
+        resultsLabel.text = toUnits
     }
     
 }
