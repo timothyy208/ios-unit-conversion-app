@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66r-Fc-AuD">
-                                <rect key="frame" x="16" y="193" width="382" height="315"/>
+                                <rect key="frame" x="16" y="193" width="381" height="315"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8d-LV-1R9">
@@ -50,6 +50,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="userInputChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="MhU-mM-6Cc"/>
+                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0C7-uO-haP">
                                 <rect key="frame" x="20" y="60" width="33" height="29"/>
@@ -62,6 +65,9 @@
                                     <segment title="-"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="signSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="LpM-Ay-Nf8"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjj-I8-8hh">
                                 <rect key="frame" x="107" y="562" width="200" height="30"/>
@@ -107,7 +113,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l56-aW-uww">
-                                <rect key="frame" x="315" y="64" width="83" height="23.5"/>
+                                <rect key="frame" x="314" y="64" width="83" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -147,6 +153,7 @@
                         <outlet property="formulaPicker" destination="66r-Fc-AuD" id="2Wt-ex-ZEy"/>
                         <outlet property="fromUnitsLabel" destination="l56-aW-uww" id="uV5-6O-Bc0"/>
                         <outlet property="resultsLabel" destination="b8d-LV-1R9" id="jkF-az-4NQ"/>
+                        <outlet property="signSegment" destination="0C7-uO-haP" id="CDQ-jv-tu5"/>
                         <outlet property="userInput" destination="k7C-DX-YVY" id="8Lv-nF-COX"/>
                     </connections>
                 </viewController>
